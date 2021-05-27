@@ -7,6 +7,10 @@
 
 
 class PuzzlePiece {
+public:
+    PuzzlePiece(int xpos, int ypos);
+
+    virtual ~PuzzlePiece();
 
 private:
     int xpos;
