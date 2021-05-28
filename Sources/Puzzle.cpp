@@ -9,7 +9,7 @@ Puzzle::Puzzle(bool isHard) : hard(isHard) {}
 
 Puzzle::~Puzzle() = default;
 
-void Puzzle::shufflePuzzle() {
+void Puzzle::hidePiece() {
     std::random_device rd;
     std::uniform_int_distribution<int> distribution(0, 3);
     xempty = distribution(rd);

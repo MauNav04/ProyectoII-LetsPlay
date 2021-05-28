@@ -5,9 +5,9 @@
 
 int main(int argc, char *argv[]) {
     Puzzle p = new Puzzle(true);
-    p.shufflePuzzle();
+    p.hidePiece();
     std::cout << p.getXempty() << " " << p.getYempty() << std::endl;
-    p.shufflePuzzle();
+    p.hidePiece();
     std::cout << p.getXempty() << " " << p.getYempty() << std::endl;
     std::cout << p.getPuzzlePiece(0, 0).isDisplayed() << std::endl;
     std::cout << p.getPuzzlePiece(p.getXempty(), p.getYempty()).isDisplayed() << " " << std::endl;

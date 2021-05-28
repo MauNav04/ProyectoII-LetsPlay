@@ -26,7 +26,7 @@ public:
 
     virtual ~Puzzle();
 
-    void shufflePuzzle();
+    void hidePiece();
 
     PuzzlePiece getPuzzlePiece(int x, int y);
 
