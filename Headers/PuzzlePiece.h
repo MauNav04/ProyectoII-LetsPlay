@@ -7,14 +7,25 @@
 
 
 class PuzzlePiece {
+
+private:
+    bool displayed = true;
+    int xpos;
+    int ypos;
+
 public:
     PuzzlePiece(int xpos, int ypos);
 
     virtual ~PuzzlePiece();
 
-private:
-    int xpos;
-    int ypos;
+    bool isDisplayed() const;
+
+    void setDisplayed(bool displayed);
+
+    int getXpos() const;
+
+    int getYpos() const;
+
 };
 
 
