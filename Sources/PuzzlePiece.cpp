@@ -4,7 +4,9 @@
 
 #include "../Headers/PuzzlePiece.h"
 
-PuzzlePiece::PuzzlePiece(int xpos, int ypos) : xpos(xpos), ypos(ypos) {}
+PuzzlePiece::PuzzlePiece() = default;
+
+PuzzlePiece::PuzzlePiece(int xpos, int ypos) : posRow(xpos), posColumn(ypos) {}
 
 PuzzlePiece::~PuzzlePiece() = default;
 
@@ -17,9 +19,9 @@ void PuzzlePiece::setDisplayed(bool displayed) {
 }
 
 int PuzzlePiece::getXpos() const {
-    return xpos;
+    return posRow;
 }
 
 int PuzzlePiece::getYpos() const {
-    return ypos;
+    return posColumn;
 }

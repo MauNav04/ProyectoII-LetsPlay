@@ -10,10 +10,12 @@ class PuzzlePiece {
 
 private:
     bool displayed = true;
-    int xpos;
-    int ypos;
+    int posRow;
+    int posColumn;
 
 public:
+    PuzzlePiece();
+
     PuzzlePiece(int xpos, int ypos);
 
     virtual ~PuzzlePiece();
@@ -25,7 +27,6 @@ public:
     int getXpos() const;
 
     int getYpos() const;
-
 };
 
 
