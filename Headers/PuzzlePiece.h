@@ -24,9 +24,9 @@ public:
 
     void setDisplayed(bool displayed);
 
-    int getXpos() const;
+    int getCorrectRow() const;
 
-    int getYpos() const;
+    int getCorrectColumn() const;
 };
 
 

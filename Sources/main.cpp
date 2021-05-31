@@ -6,7 +6,7 @@
 int main(int argc, char *argv[]) {
     Puzzle p = new Puzzle(true);
     p.hidePiece();
-    p.move(direction::LEFT);
+    p.shuffle();
     QApplication a(argc, argv);
     QPushButton button("Hello world!", nullptr);
     button.resize(200, 100);

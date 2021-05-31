@@ -30,12 +30,9 @@ public:
 
     void move(direction dir);
 
-    PuzzlePiece getPuzzlePiece(int x, int y);
+    void shuffle();
 
-    int getXempty() const;
-
-    int getYempty() const;
-
+    direction moveRandom();
 };
 
 

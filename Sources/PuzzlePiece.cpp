@@ -18,10 +18,10 @@ void PuzzlePiece::setDisplayed(bool displayed) {
     PuzzlePiece::displayed = displayed;
 }
 
-int PuzzlePiece::getXpos() const {
+int PuzzlePiece::getCorrectRow() const {
     return posRow;
 }
 
-int PuzzlePiece::getYpos() const {
+int PuzzlePiece::getCorrectColumn() const {
     return posColumn;
 }

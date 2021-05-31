@@ -34,7 +34,7 @@ void Puzzle::setDirection(direction dir) {
             }
             break;
         case direction::DOWN:
-            if (emptyRow < sizeof(puzzleMatrix[0]) / sizeof(puzzleMatrix[0][0])) {
+            if (emptyRow < sizeof(puzzleMatrix[0]) / sizeof(puzzleMatrix[0][0]) - 1) {
                 moveRow++;
             }
             break;
@@ -44,8 +44,8 @@ void Puzzle::setDirection(direction dir) {
             }
             break;
         case direction::RIGHT:
-            if (emptyColumn > sizeof(puzzleMatrix) / sizeof(puzzleMatrix[0])) {
-                moveRow++;
+            if (emptyColumn < sizeof(puzzleMatrix) / sizeof(puzzleMatrix[0]) - 1) {
+                moveColumn++;
             }
             break;
     }
@@ -61,16 +61,25 @@ void Puzzle::move(direction dir) {
     emptyColumn = moveColumn;
 }
 
-PuzzlePiece Puzzle::getPuzzlePiece(int x, int y) {
-    return *puzzleMatrix[x][y];
+void Puzzle::shuffle() {
+    int times = 5;
+    while (times > 0) {
+        for (int i = 0; i < sizeof(puzzleMatrix) / sizeof(puzzleMatrix[0]); i++) {
+            for (int j = 0; j < sizeof(puzzleMatrix[0]) / sizeof(puzzleMatrix[0][0]); j++) {
+                move(moveRandom());
+                while (i == puzzleMatrix[i][j]->getCorrectRow() && j == puzzleMatrix[i][j]->getCorrectColumn()) {
+                    move(moveRandom());
+                }
+            }
+        }
+        times--;
+    }
 }
 
-int Puzzle::getXempty() const {
-    return emptyRow;
+direction Puzzle::moveRandom() {
+    std::random_device rd;
+    std::uniform_int_distribution<size_t> distribution(0, ALL_DIRECTIONS.size() - 1);
+    direction ranDir = ALL_DIRECTIONS[distribution(rd)];
+    return ranDir;
 }
-
-int Puzzle::getYempty() const {
-    return emptyColumn;
-}
-
 
