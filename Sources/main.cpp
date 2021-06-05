@@ -2,11 +2,16 @@
 #include <QPushButton>
 #include <iostream>
 #include "../Headers/Puzzle.h"
+#include "../Headers/GeneticSolver.h"
 
 int main(int argc, char *argv[]) {
-    Puzzle p = new Puzzle(true);
-    p.hidePiece();
-    p.shuffle();
+    Puzzle p = Puzzle(true);
+    p.move(direction::LEFT);
+    GeneticSolver gs = GeneticSolver(p);
+    std::array<direction, 128> solution = gs.solve();
+    for (int i = 0; i < solution.size(); i++) {
+        p.move(solution[i]);
+    }
     QApplication a(argc, argv);
     QPushButton button("Hello world!", nullptr);
     button.resize(200, 100);

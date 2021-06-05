@@ -9,13 +9,11 @@
 class PuzzlePiece {
 
 private:
-    bool displayed = true;
+    bool displayed;
     int posRow;
     int posColumn;
 
 public:
-    PuzzlePiece();
-
     PuzzlePiece(int xpos, int ypos);
 
     virtual ~PuzzlePiece();

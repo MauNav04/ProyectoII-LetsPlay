@@ -4,9 +4,9 @@
 
 #include "../Headers/PuzzlePiece.h"
 
-PuzzlePiece::PuzzlePiece() = default;
-
-PuzzlePiece::PuzzlePiece(int xpos, int ypos) : posRow(xpos), posColumn(ypos) {}
+PuzzlePiece::PuzzlePiece(int xpos, int ypos) : posRow(xpos), posColumn(ypos) {
+    displayed = true;
+}
 
 PuzzlePiece::~PuzzlePiece() = default;
 

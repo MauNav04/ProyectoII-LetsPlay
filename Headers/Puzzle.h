@@ -6,6 +6,7 @@
 #define PROYECTOII_LETSPLAY_PUZZLE_H
 
 
+#include <array>
 #include "PuzzlePiece.h"
 #include "Direction.h"
 
@@ -13,14 +14,14 @@ class Puzzle {
 
 private:
     bool hard;
-    int moveRow{};
-    int moveColumn{};
+    int movedRow{};
+    int movedColumn{};
     int emptyRow{};
     int emptyColumn{};
-    PuzzlePiece * puzzleMatrix [4][4];
+    std::array<std::array<PuzzlePiece *, 4>, 4> puzzleMatrix;
 
 public:
-    Puzzle(bool isHard);
+    explicit Puzzle(bool isHard);
 
     virtual ~Puzzle();
 
@@ -32,7 +33,15 @@ public:
 
     void shuffle();
 
-    direction moveRandom();
+    static direction moveRandom();
+
+    float isSolved();
+
+    int getNumRows();
+
+    unsigned long getNumColumns();
+
+    const std::array<std::array<PuzzlePiece *, 4>, 4> &getPuzzleMatrix() const;
 };
 
 

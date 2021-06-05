@@ -5,6 +5,8 @@
 #ifndef PROYECTOII_LETSPLAY_DIRECTION_H
 #define PROYECTOII_LETSPLAY_DIRECTION_H
 
+#include <vector>
+
 enum class direction {UP, DOWN, LEFT, RIGHT};
 static std::vector<direction> ALL_DIRECTIONS({direction::UP, direction::DOWN, direction::LEFT, direction::RIGHT});
 
