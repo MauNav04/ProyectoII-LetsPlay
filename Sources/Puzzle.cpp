@@ -72,9 +72,9 @@ void Puzzle::shuffle() {
         for (int i = 0; i < getNumRows(); i++) {
             for (int j = 0; j < getNumColumns(); j++) {
                 move(moveRandom());
-                while (i == puzzleMatrix[i][j]->getCorrectRow() && j == puzzleMatrix[i][j]->getCorrectColumn()) {
-                    move(moveRandom());
-                }
+//                while (i == puzzleMatrix[i][j]->getCorrectRow() && j == puzzleMatrix[i][j]->getCorrectColumn()) {
+//                    move(moveRandom());
+//                }
             }
         }
         times--;
