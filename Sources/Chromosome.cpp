@@ -5,9 +5,11 @@
 #include <algorithm>
 #include "../Headers/Chromosome.h"
 
-Chromosome::Chromosome() {}
+Chromosome::Chromosome() = default;
 
 Chromosome::Chromosome(const std::array<direction, 128> &genes) : genes(genes) {}
+
+Chromosome::~Chromosome() = default;
 
 float Chromosome::getFitness() const {
     return fitness;
@@ -21,6 +23,3 @@ const std::array<direction, 128> &Chromosome::getGenes() const {
     return genes;
 }
 
-void Chromosome::setGenes(const std::array<direction, 128> &genes) {
-    Chromosome::genes = genes;
-}

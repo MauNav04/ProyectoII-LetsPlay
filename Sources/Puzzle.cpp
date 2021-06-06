@@ -66,7 +66,8 @@ void Puzzle::move(direction dir) {
 }
 
 void Puzzle::shuffle() {
-    int times = 5;
+    //originalmente times = 5
+    int times = 1;
     while (times > 0) {
         for (int i = 0; i < getNumRows(); i++) {
             for (int j = 0; j < getNumColumns(); j++) {
