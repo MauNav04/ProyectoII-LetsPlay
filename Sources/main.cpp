@@ -9,8 +9,11 @@ int main(int argc, char *argv[]) {
     p.move(direction::LEFT);
     GeneticSolver gs = GeneticSolver(p);
     std::array<direction, 128> solution = gs.solve();
-    for (int i = 0; i < solution.size(); i++) {
-        p.move(solution[i]);
+    for (auto & i : solution) {
+        p.move(i);
+        if (p.isSolved() == 16) {
+            break;
+        }
     }
     QApplication a(argc, argv);
     QPushButton button("Hello world!", nullptr);

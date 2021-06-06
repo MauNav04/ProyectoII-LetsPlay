@@ -47,52 +47,107 @@ void GeneticSolver::createInitialPopulation() {
 
 void GeneticSolver::defineFitness() {
     float fitness;
-    bool streak;
+    int check = 0;
     float bonus = 0;
-    int correctRow;
-    int correctCol;
     for (Chromosome * chrom : genome) {
         for (direction gene : chrom->getGenes()) {
             demoPuzzle.move(gene);
-//            if (chrom->getFitness() < demoPuzzle.isSolved()) {
             fitness = demoPuzzle.isSolved();
-//            }
-//            for (int i = 0; i < demoPuzzle.getNumRows(); i++) {
-//                for (int j = 0; j < demoPuzzle.getNumColumns(); j++) {
+        }
+//        bool bonus = false;
+        int streak = 0;
+        int correctRow;
+        int correctCol;
+        for (int i = 0; i < demoPuzzle.getNumRows(); i++) {
+            for (int j = 0; j < demoPuzzle.getNumColumns(); j++) {
+                if (demoPuzzle.getPuzzleMatrix()[i][check] == demoPuzzle.getPuzzleMatrix()[i][j] ||
+                    demoPuzzle.getPuzzleMatrix()[check][j] == demoPuzzle.getPuzzleMatrix()[i][j]) {
+                    correctRow = demoPuzzle.getPuzzleMatrix()[i][j]->getCorrectRow();
+                    correctCol = demoPuzzle.getPuzzleMatrix()[i][j]->getCorrectColumn();
+                    if (correctRow == i && correctCol == j) {
+                        streak++;
+                        if (streak == 7) {
+                            bonus += 10;
+//                            return bonus;
+                        }
+                    }
+                }
+//                if (demoPuzzle.getPuzzleMatrix()[i][check] == demoPuzzle.getPuzzleMatrix()[i][j]) {
 //                    correctRow = demoPuzzle.getPuzzleMatrix()[i][j]->getCorrectRow();
 //                    correctCol = demoPuzzle.getPuzzleMatrix()[i][j]->getCorrectColumn();
 //                    if (correctRow == i && correctCol == j) {
-//                        if (streak) {
-//                            bonus += 0.1;
+//                        streak++;
+//                        if (streak == 4) {
+//                            bonus += 5;
+////                            return bonus;
 //                        }
-//                        streak = true;
-//                    } else {
-//                        streak = false;
 //                    }
 //                }
-//            }
-//            fitness += bonus;
-            chrom->setFitness(fitness);
+//                if (demoPuzzle.getPuzzleMatrix()[check][j] == demoPuzzle.getPuzzleMatrix()[i][j]) {
+//                    correctRow = demoPuzzle.getPuzzleMatrix()[i][j]->getCorrectRow();
+//                    correctCol = demoPuzzle.getPuzzleMatrix()[i][j]->getCorrectColumn();
+//                    if (correctRow == i && correctCol == j) {
+//                        streak++;
+//                        if (streak == 4) {
+//                            bonus += 5;
+////                            return bonus;
+//                        }
+//                    }
+//                }
+
+            }
         }
+//        while (fitnessBonus() && check <= 3) {
+//            bonus += 10;
+//            check++;
+//        }
+        check = 0;
+        fitness += bonus;
+        chrom->setFitness(fitness);
         demoPuzzle = originalPuzzle;
     }
 }
+
+//bool GeneticSolver::fitnessBonus(int check) {
+//    bool bonus = false;
+//    int streak = 0;
+//    int correctRow;
+//    int correctCol;
+//    for (int i = 0; i < demoPuzzle.getNumRows(); i++) {
+//        for (int j = 0; j < demoPuzzle.getNumColumns(); j++) {
+//            if (demoPuzzle.getPuzzleMatrix()[i][check] == demoPuzzle.getPuzzleMatrix()[i][j] ||
+//                demoPuzzle.getPuzzleMatrix()[check][j] == demoPuzzle.getPuzzleMatrix()[i][j]) {
+//                correctRow = demoPuzzle.getPuzzleMatrix()[i][j]->getCorrectRow();
+//                correctCol = demoPuzzle.getPuzzleMatrix()[i][j]->getCorrectColumn();
+//                if (correctRow == i && correctCol == j) {
+//                    streak++;
+//                    if (streak == 7) {
+//                        bonus = true;
+//                        return bonus;
+//                    }
+//                }
+//            }
+//        }
+//    }
+//    return bonus;
+//}
 
 void GeneticSolver::select() {
     std::sort(std::begin(genome), std::end(genome), [](auto& l, auto& r) -> bool {
         return l->getFitness() > r->getFitness();
     } );
-    while (genome.size() > 64) {
+//    genome.back()->getFitness() < genome.front()->getFitness() ||
+    while (genome.size() > 32) {
         genome.pop_back();
     }
 }
 
 void GeneticSolver::crossover() {
+    int cut;
     std::random_device rd;
     std::array<direction, 128> parent1{};
     std::array<direction, 128> parent2{};
     std::array<direction, 128> child{};
-    int cut;
     std::uniform_int_distribution<size_t> percentage(0, 64);
     while (genome.size() < 128) {
         std::uniform_int_distribution<size_t> distribution(0, genome.size() - 1);
@@ -105,9 +160,9 @@ void GeneticSolver::crossover() {
         for (int i = cut; i < parent2.size(); i++) {
             child[i] = parent2[i];
         }
-        if (percentage(rd) == 32) {
-            child = mutation(child);
-        }
+//        if (percentage(rd) == 32) {
+        child = mutation(child);
+//        }
         genome.push_back(new Chromosome(child));
     }
 }

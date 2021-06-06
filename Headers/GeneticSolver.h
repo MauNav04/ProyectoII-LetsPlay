@@ -27,11 +27,13 @@ public:
 
     void createInitialPopulation();
 
+    void defineFitness();
+
+    int fitnessBonus(int check);
+
     void crossover();
 
     std::array<direction, 128> mutation(std::array<direction, 128> array);
-
-    void defineFitness();
 };
 
 

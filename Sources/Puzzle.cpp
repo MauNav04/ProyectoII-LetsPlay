@@ -7,8 +7,8 @@
 #include "../Headers/Puzzle.h"
 
 Puzzle::Puzzle(bool isHard) : hard(isHard) {
-    for (int i = 0; i < sizeof(puzzleMatrix) / sizeof(puzzleMatrix[0]); i++) {
-        for (int j = 0; j < sizeof(puzzleMatrix[0]) / sizeof(puzzleMatrix[0][0]); j++) {
+    for (int i = 0; i < getNumRows(); i++) {
+        for (int j = 0; j < getNumColumns(); j++) {
             puzzleMatrix[i][j] = new PuzzlePiece(i, j);
         }
     }
@@ -90,7 +90,7 @@ direction Puzzle::moveRandom() {
 float Puzzle::isSolved() {
     int correctRow;
     int correctCol;
-    int score = 0;
+    float score = 0;
     for (int i = 0; i < getNumRows(); i++) {
         for (int j = 0; j < getNumColumns(); j++) {
             correctRow = puzzleMatrix[i][j]->getCorrectRow();
