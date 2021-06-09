@@ -6,7 +6,7 @@
 #define PROYECTOII_LETSPLAY_GENETICSOLVER_H
 
 
-#include "Puzzle.h"
+#include "PuzzleGrid.h"
 #include "Chromosome.h"
 
 class GeneticSolver {
@@ -21,12 +21,12 @@ private:
     /**
      * Romprecabezas utilizado como referencia para reiniciar el rompecabezas de prueba
      */
-    Puzzle originalPuzzle;
+    PuzzleGrid originalPuzzle;
 
     /**
      * Rombecabezas que tratan de solucionar los cromosomas
      */
-    Puzzle demoPuzzle;
+    PuzzleGrid demoPuzzle;
 
 public:
 
@@ -34,7 +34,7 @@ public:
      * Constructor que recibe el rompecabezas a resolver
      * @param puzzleMatrix rompecabezas a resolver
      */
-    explicit GeneticSolver(const Puzzle& puzzleMatrix);
+    explicit GeneticSolver(const PuzzleGrid& puzzleMatrix);
 
     /**
      * Destructor del solucionador

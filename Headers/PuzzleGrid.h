@@ -2,15 +2,15 @@
 // Created by mavros on 26/5/21.
 //
 
-#ifndef PROYECTOII_LETSPLAY_PUZZLE_H
-#define PROYECTOII_LETSPLAY_PUZZLE_H
+#ifndef PROYECTOII_LETSPLAY_PUZZLEGRID_H
+#define PROYECTOII_LETSPLAY_PUZZLEGRID_H
 
 
 #include <array>
 #include "PuzzlePiece.h"
 #include "Direction.h"
 
-class Puzzle {
+class PuzzleGrid {
 
 private:
 
@@ -50,12 +50,12 @@ public:
      * Constructor que define la dificultad del rompecabezas
      * @param isHard dificultad del rompecabezas
      */
-    explicit Puzzle(bool isHard);
+    explicit PuzzleGrid(bool isHard);
 
     /**
      * Destructor del rompecabezas
      */
-    virtual ~Puzzle();
+    virtual ~PuzzleGrid();
 
     /**
      * Esconde la ñultima pieza del tablero, donde es posible hacer movimientos
@@ -112,4 +112,4 @@ public:
 };
 
 
-#endif //PROYECTOII_LETSPLAY_PUZZLE_H
+#endif //PROYECTOII_LETSPLAY_PUZZLEGRID_H

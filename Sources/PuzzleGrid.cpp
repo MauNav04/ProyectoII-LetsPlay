@@ -4,9 +4,9 @@
 
 #include <random>
 #include <bits/stdc++.h>
-#include "../Headers/Puzzle.h"
+#include "../Headers/PuzzleGrid.h"
 
-Puzzle::Puzzle(bool isHard) : hard(isHard) {
+PuzzleGrid::PuzzleGrid(bool isHard) : hard(isHard) {
     for (int i = 0; i < getNumRows(); i++) {
         for (int j = 0; j < getNumColumns(); j++) {
             puzzleMatrix[i][j] = new PuzzlePiece(i, j);
@@ -16,13 +16,13 @@ Puzzle::Puzzle(bool isHard) : hard(isHard) {
     shuffle();
 }
 
-Puzzle::~Puzzle() = default;
+PuzzleGrid::~PuzzleGrid() = default;
 
-void Puzzle::hidePiece() {
+void PuzzleGrid::hidePiece() {
     puzzleMatrix[getNumRows() - 1][getNumColumns() - 1]->setDisplayed(false);
 }
 
-void Puzzle::setDirection(direction dir) {
+void PuzzleGrid::setDirection(direction dir) {
     movedRow = emptyRow;
     movedColumn = emptyColumn;
     switch (dir) {
@@ -49,7 +49,7 @@ void Puzzle::setDirection(direction dir) {
     }
 }
 
-void Puzzle::move(direction dir) {
+void PuzzleGrid::move(direction dir) {
     int row;
     int col;
     setDirection(dir);
@@ -65,7 +65,7 @@ void Puzzle::move(direction dir) {
     movedColumn = col;
 }
 
-void Puzzle::shuffle() {
+void PuzzleGrid::shuffle() {
     //originalmente times = 5
     int times = 1;
     while (times > 0) {
@@ -81,14 +81,14 @@ void Puzzle::shuffle() {
     }
 }
 
-direction Puzzle::moveRandom() {
+direction PuzzleGrid::moveRandom() {
     std::random_device rd;
     std::uniform_int_distribution<size_t> distribution(0, ALL_DIRECTIONS.size() - 1);
     direction ranDir = ALL_DIRECTIONS[distribution(rd)];
     return ranDir;
 }
 
-float Puzzle::isSolved() {
+float PuzzleGrid::isSolved() {
     int correctRow;
     int correctCol;
     float score = 0;
@@ -104,14 +104,14 @@ float Puzzle::isSolved() {
     return score;
 }
 
-int Puzzle::getNumRows() {
+int PuzzleGrid::getNumRows() {
     return sizeof puzzleMatrix / sizeof puzzleMatrix[0];
 }
 
-unsigned long Puzzle::getNumColumns() {
+unsigned long PuzzleGrid::getNumColumns() {
     return sizeof(puzzleMatrix[0]) / sizeof(puzzleMatrix[0][0]);
 }
 
-const std::array<std::array<PuzzlePiece *, 4>, 4> &Puzzle::getPuzzleMatrix() const {
+const std::array<std::array<PuzzlePiece *, 4>, 4> &PuzzleGrid::getPuzzleMatrix() const {
     return puzzleMatrix;
 }

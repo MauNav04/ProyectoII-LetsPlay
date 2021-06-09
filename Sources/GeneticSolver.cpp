@@ -8,7 +8,7 @@
 #include <random>
 #include "../Headers/GeneticSolver.h"
 
-GeneticSolver::GeneticSolver(const Puzzle& puzzleMatrix) : originalPuzzle(puzzleMatrix), demoPuzzle(puzzleMatrix) {}
+GeneticSolver::GeneticSolver(const PuzzleGrid& puzzleMatrix) : originalPuzzle(puzzleMatrix), demoPuzzle(puzzleMatrix) {}
 
 GeneticSolver::~GeneticSolver() = default;
 
@@ -38,7 +38,7 @@ void GeneticSolver::createInitialPopulation() {
     int initialPopulaiton = 0;
     while (initialPopulaiton < 256) {
         for (int i = 0; i < genes.max_size(); i++) {
-            genes[i] = Puzzle::moveRandom();
+            genes[i] = PuzzleGrid::moveRandom();
         }
         genome.push_back(new Chromosome(genes));
         initialPopulaiton++;

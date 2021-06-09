@@ -1,11 +1,11 @@
 #include <QApplication>
 #include <QPushButton>
 #include <iostream>
-#include "../Headers/Puzzle.h"
+#include "../Headers/PuzzleGrid.h"
 #include "../Headers/GeneticSolver.h"
 
 int main(int argc, char *argv[]) {
-    Puzzle p = Puzzle(true);
+    PuzzleGrid p = PuzzleGrid(true);
     p.move(direction::LEFT);
     GeneticSolver gs = GeneticSolver(p);
     std::array<direction, 128> solution = gs.solve();
@@ -16,8 +16,7 @@ int main(int argc, char *argv[]) {
         }
     }
     QApplication a(argc, argv);
-    QPushButton button("Hello world!", nullptr);
-    button.resize(200, 100);
-    button.show();
-    return QApplication::exec();
+    QWidget w;
+    w.show();
+    return a.exec();
 }
