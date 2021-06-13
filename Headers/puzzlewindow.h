@@ -1,28 +1,28 @@
-//
-// Created by mavros on 6/6/21.
-//
+#ifndef PUZZLEWINDOW_H
+#define PUZZLEWINDOW_H
 
-#ifndef PROYECTOII_LETSPLAY_PUZZLEWINDOW_H
-#define PROYECTOII_LETSPLAY_PUZZLEWINDOW_H
-
-#include <QWidget>
-
+#include <QDialog>
+#include <QLabel>
+#include "PuzzleGrid.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class puzzlewindow; }
 QT_END_NAMESPACE
 
-class puzzlewindow : public QWidget {
-Q_OBJECT
-
-public:
-    explicit puzzlewindow(QWidget *parent = nullptr);
-
-    ~puzzlewindow() override;
+class puzzlewindow : public QDialog
+{
+    Q_OBJECT
 
 private:
     Ui::puzzlewindow *ui;
+    PuzzleGrid field = PuzzleGrid(true);
+    QLabel* labels[4][4];
+
+public:
+    puzzlewindow(QWidget *parent = nullptr);
+    ~puzzlewindow();
+
+    void initLabels();
+
 };
-
-
-#endif //PROYECTOII_LETSPLAY_PUZZLEWINDOW_H
+#endif // PUZZLEWINDOW_H
