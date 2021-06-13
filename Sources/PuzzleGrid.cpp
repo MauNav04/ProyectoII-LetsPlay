@@ -67,7 +67,7 @@ void PuzzleGrid::move(direction dir) {
 
 void PuzzleGrid::shuffle() {
     //originalmente times = 5
-    int times = 1;
+    int times = 5;
     while (times > 0) {
         for (int i = 0; i < getNumRows(); i++) {
             for (int j = 0; j < getNumColumns(); j++) {
@@ -110,6 +110,22 @@ int PuzzleGrid::getNumRows() {
 
 unsigned long PuzzleGrid::getNumColumns() {
     return sizeof(puzzleMatrix[0]) / sizeof(puzzleMatrix[0][0]);
+}
+
+int PuzzleGrid::getMovedRow() const {
+    return movedRow;
+}
+
+int PuzzleGrid::getMovedColumn() const {
+    return movedColumn;
+}
+
+int PuzzleGrid::getEmptyRow() const {
+    return emptyRow;
+}
+
+int PuzzleGrid::getEmptyColumn() const {
+    return emptyColumn;
 }
 
 const std::array<std::array<PuzzlePiece *, 4>, 4> &PuzzleGrid::getPuzzleMatrix() const {
