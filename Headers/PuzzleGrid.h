@@ -91,6 +91,15 @@ public:
      */
     float isSolved();
 
+    int getMovedRow() const;
+
+    int getMovedColumn() const;
+
+    int getEmptyRow() const;
+
+    int getEmptyColumn() const;
+
+
     /**
      * Retorna la cantidad de filas en el rompecabezas
      * @return número de filas en el rompecabezas
