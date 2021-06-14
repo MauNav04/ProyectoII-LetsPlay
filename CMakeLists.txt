@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_PREFIX_PATH "-DCMAKE_PREFIX_PATH=/usr/include/{host}/qt{version}/")
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
-set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOUIC OFF)
 
 set(QT_VERSION 5)
 set(REQUIRED_LIBS Core Gui Widgets)
@@ -23,7 +23,7 @@ add_executable(${PROJECT_NAME} Sources/main.cpp
         Headers/Chromosome.h
         Sources/puzzlewindow.cpp
         Headers/puzzlewindow.h
-        Sources/puzzlewindow.ui)
+        Forms/puzzlewindow.ui)
 
 if (NOT CMAKE_PREFIX_PATH)
     message(WARNING "CMAKE_PREFIX_PATH is not defined, you may need to set it "

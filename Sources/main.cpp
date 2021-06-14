@@ -1,8 +1,8 @@
+
 #include <QApplication>
-#include <QPushButton>
-#include <iostream>
 #include "../Headers/PuzzleGrid.h"
 #include "../Headers/GeneticSolver.h"
+#include "../Headers/puzzlewindow.h"
 
 int main(int argc, char *argv[]) {
     PuzzleGrid p = PuzzleGrid(true);
@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
         }
     }
     QApplication a(argc, argv);
-    QWidget w;
+    puzzlewindow w;
     w.show();
     return a.exec();
 }
