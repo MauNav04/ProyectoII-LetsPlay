@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "gpsettings.h"
+#include "puzzlewindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

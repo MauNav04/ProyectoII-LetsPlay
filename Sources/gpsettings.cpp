@@ -1,6 +1,6 @@
-#include "gpsettings.h"
+#include "../Headers/gpsettings.h"
 #include "ui_gpsettings.h"
-#include "mainwindow.h"
+#include "../Headers/mainwindow.h"
 #include "QFileDialog"
 
 GPSettings::GPSettings(QWidget *parent) :
@@ -8,6 +8,9 @@ GPSettings::GPSettings(QWidget *parent) :
     ui(new Ui::GPSettings)
 {
     ui->setupUi(this);
+
+    gpwindow = new puzzlewindow;
+    connect(gpwindow, &puzzlewindow::secondWindow, this, &GPSettings::show);
 }
 
 GPSettings::~GPSettings()
@@ -36,4 +39,9 @@ void GPSettings::on_ImageButton_clicked()
             //Error handling
         }
     }
+}
+
+void GPSettings::on_GP_Play_clicked() {
+    gpwindow->show();
+    this->close();
 }

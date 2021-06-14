@@ -2,6 +2,7 @@
 #define GPSETTINGS_H
 
 #include <QDialog>
+#include "puzzlewindow.h"
 
 namespace Ui {
 class GPSettings;
@@ -17,14 +18,17 @@ public:
 
 signals:
     void firstWindow();
+    void secondWindow();
 
 private slots:
     void on_GP_Back_clicked();
 
     void on_ImageButton_clicked();
 
+    void on_GP_Play_clicked();
 private:
     Ui::GPSettings *ui;
+    puzzlewindow *gpwindow;
 };
 
 #endif // GPSETTINGS_H
