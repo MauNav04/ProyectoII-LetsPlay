@@ -5,7 +5,9 @@
 #ifndef PROYECTOII_LETSPLAY_PUZZLEPIECE_H
 #define PROYECTOII_LETSPLAY_PUZZLEPIECE_H
 
-
+/**
+ * Clase de las piezas que se mueven en el rompecabezas
+ */
 class PuzzlePiece {
 
 private:

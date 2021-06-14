@@ -9,6 +9,9 @@
 #include "PuzzleGrid.h"
 #include "Chromosome.h"
 
+/**
+ * Clase que soluciona al rompecabezas con el algoritmo genético
+ */
 class GeneticSolver {
 
 private:

@@ -1,0 +1,107 @@
+\hypertarget{classGeneticSolver}{}\doxysection{Referencia de la Clase Genetic\+Solver}
+\label{classGeneticSolver}\index{GeneticSolver@{GeneticSolver}}
+
+
+{\ttfamily \#include $<$Genetic\+Solver.\+h$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGeneticSolver_aa8502cf4a91fcce1a56887916669cf12}{Genetic\+Solver}} (const \mbox{\hyperlink{classPuzzleGrid}{Puzzle\+Grid}} \&puzzle\+Matrix)
+\item 
+virtual \mbox{\hyperlink{classGeneticSolver_a5fa65b52da5e9685654b67c3850ebda2}{$\sim$\+Genetic\+Solver}} ()
+\item 
+std\+::array$<$ direction, 128 $>$ \mbox{\hyperlink{classGeneticSolver_ac8dfcfb9682a1672150ea20b9e2878d8}{solve}} ()
+\item 
+void \mbox{\hyperlink{classGeneticSolver_af6984cb6a59648419033ace374646ee2}{create\+Initial\+Population}} ()
+\item 
+void \mbox{\hyperlink{classGeneticSolver_af08494be086ffb4a33c7c28d540f031d}{select}} ()
+\item 
+void \mbox{\hyperlink{classGeneticSolver_a7a01f5eb47e984fd554041c36c4ad278}{define\+Fitness}} ()
+\item 
+void \mbox{\hyperlink{classGeneticSolver_a207e939e7e3b25023f6deeb39c49fc84}{crossover}} ()
+\item 
+std\+::array$<$ direction, 128 $>$ \mbox{\hyperlink{classGeneticSolver_ac2cae3c1e3cd68353c8bffec29b4e4eb}{mutation}} (std\+::array$<$ direction, 128 $>$ array)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que soluciona al rompecabezas con el algoritmo genético 
+
+Definición en la línea 15 del archivo Genetic\+Solver.\+h.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classGeneticSolver_aa8502cf4a91fcce1a56887916669cf12}\label{classGeneticSolver_aa8502cf4a91fcce1a56887916669cf12}} 
+\index{GeneticSolver@{GeneticSolver}!GeneticSolver@{GeneticSolver}}
+\index{GeneticSolver@{GeneticSolver}!GeneticSolver@{GeneticSolver}}
+\doxysubsubsection{\texorpdfstring{GeneticSolver()}{GeneticSolver()}}
+{\footnotesize\ttfamily Genetic\+Solver\+::\+Genetic\+Solver (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPuzzleGrid}{Puzzle\+Grid}} \&}]{puzzle\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructor que recibe el rompecabezas a resolver 
+\begin{DoxyParams}{Parámetros}
+{\em puzzle\+Matrix} & rompecabezas a resolver \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGeneticSolver_a5fa65b52da5e9685654b67c3850ebda2}\label{classGeneticSolver_a5fa65b52da5e9685654b67c3850ebda2}} 
+\index{GeneticSolver@{GeneticSolver}!````~GeneticSolver@{$\sim$GeneticSolver}}
+\index{````~GeneticSolver@{$\sim$GeneticSolver}!GeneticSolver@{GeneticSolver}}
+\doxysubsubsection{\texorpdfstring{$\sim$GeneticSolver()}{~GeneticSolver()}}
+{\footnotesize\ttfamily virtual Genetic\+Solver\+::$\sim$\+Genetic\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor del solucionador 
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classGeneticSolver_af6984cb6a59648419033ace374646ee2}\label{classGeneticSolver_af6984cb6a59648419033ace374646ee2}} 
+\index{GeneticSolver@{GeneticSolver}!createInitialPopulation@{createInitialPopulation}}
+\index{createInitialPopulation@{createInitialPopulation}!GeneticSolver@{GeneticSolver}}
+\doxysubsubsection{\texorpdfstring{createInitialPopulation()}{createInitialPopulation()}}
+{\footnotesize\ttfamily void Genetic\+Solver\+::create\+Initial\+Population (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Crea la población inicial del algoritmo genético \mbox{\Hypertarget{classGeneticSolver_a207e939e7e3b25023f6deeb39c49fc84}\label{classGeneticSolver_a207e939e7e3b25023f6deeb39c49fc84}} 
+\index{GeneticSolver@{GeneticSolver}!crossover@{crossover}}
+\index{crossover@{crossover}!GeneticSolver@{GeneticSolver}}
+\doxysubsubsection{\texorpdfstring{crossover()}{crossover()}}
+{\footnotesize\ttfamily void Genetic\+Solver\+::crossover (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Cruza a los cromosomas con mayor fitness \mbox{\Hypertarget{classGeneticSolver_a7a01f5eb47e984fd554041c36c4ad278}\label{classGeneticSolver_a7a01f5eb47e984fd554041c36c4ad278}} 
+\index{GeneticSolver@{GeneticSolver}!defineFitness@{defineFitness}}
+\index{defineFitness@{defineFitness}!GeneticSolver@{GeneticSolver}}
+\doxysubsubsection{\texorpdfstring{defineFitness()}{defineFitness()}}
+{\footnotesize\ttfamily void Genetic\+Solver\+::define\+Fitness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Define la fórmula de fitness, que les asigna puntos dependiendo de cúantas piezas coloque correctamente en el tablero y les da un bonus si hay una fila o columna solucionada \mbox{\Hypertarget{classGeneticSolver_ac2cae3c1e3cd68353c8bffec29b4e4eb}\label{classGeneticSolver_ac2cae3c1e3cd68353c8bffec29b4e4eb}} 
+\index{GeneticSolver@{GeneticSolver}!mutation@{mutation}}
+\index{mutation@{mutation}!GeneticSolver@{GeneticSolver}}
+\doxysubsubsection{\texorpdfstring{mutation()}{mutation()}}
+{\footnotesize\ttfamily std\+::array$<$direction, 128$>$ Genetic\+Solver\+::mutation (\begin{DoxyParamCaption}\item[{std\+::array$<$ direction, 128 $>$}]{array }\end{DoxyParamCaption})}
+
+Muta a los hijos cambiando un gen cualquiera con otro gen aleatorio 
+\begin{DoxyParams}{Parámetros}
+{\em array} & hijo a modificar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+hijo modificado 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGeneticSolver_af08494be086ffb4a33c7c28d540f031d}\label{classGeneticSolver_af08494be086ffb4a33c7c28d540f031d}} 
+\index{GeneticSolver@{GeneticSolver}!select@{select}}
+\index{select@{select}!GeneticSolver@{GeneticSolver}}
+\doxysubsubsection{\texorpdfstring{select()}{select()}}
+{\footnotesize\ttfamily void Genetic\+Solver\+::select (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Organiza a los cromosomas de acuerdo a su fitness y elimina la mitad de los cromosomas con el fitness más pequeño \mbox{\Hypertarget{classGeneticSolver_ac8dfcfb9682a1672150ea20b9e2878d8}\label{classGeneticSolver_ac8dfcfb9682a1672150ea20b9e2878d8}} 
+\index{GeneticSolver@{GeneticSolver}!solve@{solve}}
+\index{solve@{solve}!GeneticSolver@{GeneticSolver}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily std\+::array$<$direction, 128$>$ Genetic\+Solver\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Contiene lso diferentes pasos del algoritmo genético y los encicla hasta obtener una solución \begin{DoxyReturn}{Devuelve}
+cromosoma con la solución del rompecabezas 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+Genetic\+Solver.\+h\end{DoxyCompactItemize}

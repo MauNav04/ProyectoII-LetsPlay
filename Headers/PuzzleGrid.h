@@ -10,6 +10,9 @@
 #include "PuzzlePiece.h"
 #include "Direction.h"
 
+/**
+ * matriz del rompecabezas que lo revuelve y mueve sus piezas
+ */
 class PuzzleGrid {
 
 private:
@@ -91,12 +94,28 @@ public:
      */
     float isSolved();
 
+    /**
+     * Getter de la fila de la última pieza movida
+     * @return fila de la última pieza movida
+     */
     int getMovedRow() const;
 
+    /**
+     * Getter de la columna de la última pieza movida
+     * @return columna de la última pieza movida
+     */
     int getMovedColumn() const;
 
+    /**
+     * Getter de la fila de la pieza en blanco
+     * @return fila de la pieza en blanco
+     */
     int getEmptyRow() const;
 
+    /**
+     * Getter de la columna de la pieza en blanco
+     * @return columna de la pieza en blanco
+     */
     int getEmptyColumn() const;
 
 
