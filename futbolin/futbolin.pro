@@ -16,15 +16,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ballwindowsettings.cpp \
     bpsettings.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    ballwindowsettings.h \
     bpsettings.h \
     mainwindow.h
 
 FORMS += \
+    ../BallWindowSettings/ballwindowsettings.ui \
+    ballwindowsettings.ui \
     bpsettings.ui \
     mainwindow.ui
 
