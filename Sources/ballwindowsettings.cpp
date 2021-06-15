@@ -1,6 +1,6 @@
-#include "ballwindowsettings.h"
+#include "../Headers/ballwindowsettings.h"
 #include "ui_ballwindowsettings.h"
-#include "bpsettings.h"
+#include "../Headers/bpsettings.h"
 
 ballwindowsettings::ballwindowsettings(QWidget *parent) :
     QDialog(parent),

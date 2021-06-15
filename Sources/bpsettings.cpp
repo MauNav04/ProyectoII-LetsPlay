@@ -1,5 +1,6 @@
 #include "../Headers/bpsettings.h"
 #include "ui_bpsettings.h"
+#include "../Headers/mainwindow.h"
 
 
 
@@ -23,7 +24,7 @@ BPSettings::~BPSettings()
 void BPSettings::on_BP_Back_clicked()
 {
     this->close();
-    emit ThirdWindow();
+    emit FourthWindow();
 
 }
 void BPSettings::on_BP_Play_clicked()

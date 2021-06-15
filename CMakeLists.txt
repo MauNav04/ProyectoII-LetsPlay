@@ -36,7 +36,10 @@ add_executable(${PROJECT_NAME}
         Sources/bpsettings.cpp
         Sources/bpsettings.ui
         Headers/bpsettings.h
-        )
+        Sources/ballwindowsettings.cpp
+        Sources/ballwindowsettings.ui
+        Headers/ballwindowsettings.h
+        Sources/mainwindow.cpp)
 
 if (NOT CMAKE_PREFIX_PATH)
     message(WARNING "CMAKE_PREFIX_PATH is not defined, you may need to set it "
