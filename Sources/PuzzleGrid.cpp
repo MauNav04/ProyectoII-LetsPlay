@@ -67,7 +67,7 @@ void PuzzleGrid::move(direction dir) {
 
 void PuzzleGrid::shuffle() {
     //originalmente times = 5
-    int times = 1;
+    int times = 5;
     while (times > 0) {
         for (int i = 0; i < getNumRows(); i++) {
             for (int j = 0; j < getNumColumns(); j++) {
