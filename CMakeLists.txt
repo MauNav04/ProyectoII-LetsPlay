@@ -17,7 +17,7 @@ add_executable(${PROJECT_NAME}
         Headers/gpsettings.h
         Sources/gpsettings.ui
         Sources/main.cpp
-        Sources/mainwindow.cpp
+        Sources/ballwindowsettings.cpp
         Headers/mainwindow.h
         Sources/mainwindow.ui
         Sources/main.cpp
@@ -33,6 +33,9 @@ add_executable(${PROJECT_NAME}
         Sources/puzzlewindow.cpp
         Headers/puzzlewindow.h
         Sources/puzzlewindow.ui
+        Sources/bpsettings.cpp
+        Sources/bpsettings.ui
+        Headers/bpsettings.h
         )
 
 if (NOT CMAKE_PREFIX_PATH)

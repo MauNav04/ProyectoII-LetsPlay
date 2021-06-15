@@ -1,6 +1,5 @@
-#include "bpsettings.h"
+#include "../Headers/bpsettings.h"
 #include "ui_bpsettings.h"
-#include "mainwindow.h"
 
 
 BPSettings::BPSettings(QWidget *parent) :

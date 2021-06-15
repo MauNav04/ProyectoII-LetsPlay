@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "gpsettings.h"
 #include "puzzlewindow.h"
+#include "bpsettings.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,5 +26,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     GPSettings *puzzleSettings;
+    BPSettings *bpsettings;
 };
 #endif // MAINWINDOW_H
