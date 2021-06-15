@@ -1,38 +1,26 @@
-#include "../Headers/mainwindow.h"
-#include "ui_mainwindow.h"
-#include "../Headers/bpsettings.h"
+#include "ballwindowsettings.h"
+#include "ui_ballwindowsettings.h"
+#include "bpsettings.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+ballwindowsettings::ballwindowsettings(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::ballwindowsettings)
 {
     ui->setupUi(this);
-    //Initialize the puzzleSettings Window
-    puzzleSettings = new GPSettings;
-    //connected to the slot start the Menu window on the button in the Puzzle window
-    connect(puzzleSettings, &GPSettings::firstWindow, this, &MainWindow::show);
-    //Initialize the BPSettings Window
-    bpsettings = new BPSettings();
-    //connected to the slot start the Menu window on the button in the BPSettings window
-    connect(bpsettings, &BPSettings::ThirdWindow, this, &MainWindow::show);
-
 }
 
-MainWindow::~MainWindow()
+ballwindowsettings::~ballwindowsettings()
 {
     delete ui;
 }
 
-
-void MainWindow::on_BP_Settings_clicked()
+void ballwindowsettings::on_BP_Ball_Back_clicked()
 {
-    bpsettings->show();
     this->close();
+    emit FourthWindow();
 }
 
-void MainWindow::on_GP_Settings_clicked()
+void ballwindowsettings::on_BP_Ball_Play_clicked()
 {
-    puzzleSettings->show();
-    this->close();
 
 }
