@@ -13,7 +13,7 @@
 using namespace std;
 
 
-void foosballwindow::show() {
+void foosballwindow::show(int numPlayers, int formation, int balls) {
 
     //First thing Create a Scene
     auto * scene = new QGraphicsScene();
@@ -32,6 +32,6 @@ void foosballwindow::show() {
     //Positions the scene on 0,0 and sets the size same as the view
     scene->setSceneRect(0,0,750,600);
 
-    auto *BManager = new BoardManger(scene,11,1,5);
+    auto *BManager = new BoardManger(scene,numPlayers,formation,balls);
 
 }

@@ -2,6 +2,7 @@
 #define BPSETTINGS_H
 
 #include <QDialog>
+//#include "foosballwindow.h"
 #include "ballwindowsettings.h"
 
 namespace Ui {
@@ -27,11 +28,21 @@ private slots:
 
     void on_eleven_players_clicked();
 
+    void on_First_Formation_clicked();
+
+    void on_Second_Formation_clicked();
+
+    void on_Third_Formation_clicked();
+
     void on_BP_Play_clicked();
 
 private:
     Ui::BPSettings *ui;
-    ballwindowsettings *ballsettings;
+//    ballwindowsettings *ballsettings;
+    foosballwindow *bpwindow;
+    int numPlayers = 11;
+    int formation = 1;
+    int balls = 5;
 
 };
 

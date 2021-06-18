@@ -18,6 +18,6 @@ private:
 
 public:
 
-    void show();
+    void show(int numPlayers, int formation, int balls);
 
 };

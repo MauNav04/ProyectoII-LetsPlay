@@ -8,6 +8,8 @@ namespace Ui {
 class ballwindowsettings;
 }
 
+//static int balls = 5;
+
 class ballwindowsettings : public QDialog
 {
     Q_OBJECT
