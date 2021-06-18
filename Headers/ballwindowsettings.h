@@ -2,6 +2,7 @@
 #define BALLWINDOWSETTINGS_H
 
 #include <QDialog>
+#include "foosballwindow.h"
 
 namespace Ui {
 class ballwindowsettings;
@@ -26,6 +27,7 @@ private slots:
 
 private:
     Ui::ballwindowsettings *ui;
+    foosballwindow *bpwindow;
 };
 
 #endif // BALLWINDOWSETTINGS_H

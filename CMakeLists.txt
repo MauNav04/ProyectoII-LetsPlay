@@ -39,7 +39,16 @@ add_executable(${PROJECT_NAME}
         Sources/ballwindowsettings.cpp
         Sources/ballwindowsettings.ui
         Headers/ballwindowsettings.h
-        Sources/mainwindow.cpp)
+        Sources/mainwindow.cpp
+        Headers/ball.h
+        Sources/ball.cpp
+        Headers/BoardManger.h
+        Sources/BoardManger.cpp
+        Headers/ConectionManager.h
+        Sources/ConectionManager.cpp
+        Headers/player.h
+        Sources/player.cpp
+        Sources/foosballwindow.cpp Headers/foosballwindow.h)
 
 if (NOT CMAKE_PREFIX_PATH)
     message(WARNING "CMAKE_PREFIX_PATH is not defined, you may need to set it "

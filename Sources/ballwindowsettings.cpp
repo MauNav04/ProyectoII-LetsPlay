@@ -22,5 +22,6 @@ void ballwindowsettings::on_BP_Ball_Back_clicked()
 
 void ballwindowsettings::on_BP_Ball_Play_clicked()
 {
-
+    bpwindow->show();
+    this->close();
 }
